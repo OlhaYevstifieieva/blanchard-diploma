@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blanchard</title>
+  <link rel="shortcut icon" href="/img/favicon.png" type="image/png">
+  <link rel="preload" href="fonts/OpenSans-Bold.woff2" as="font" crossorigin>
+  <link rel="preload" href="fonts/OpenSans-Regular.woff2" as="font" crossorigin>
+  <link rel="preload" href="fonts/OpenSans-SemiBold.woff2" as="font" crossorigin>
+  <link rel="stylesheet" href="css/normalise.css">
+  <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css" />
+  <link rel="stylesheet" href="css/swiper@7.min.css">
+  <link rel="stylesheet" href="css/choices.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <h1 class="visually-hidden">Blanchard виртуальная художественная галерея</h1>
+  <!--  при клике на пункт меню осуществляется плавный переход к соответствующему блоку.  -->
+  <div class="top-wrapper">
+    <header class="header top-wrapper__header">
+      <div class="header__top">
+        <div class="container header-container">
+          <a class="header__top-logo">
+            <img src="img/logo.png" alt="Логотип художественной галереи">
+          </a>
+
+          <nav aria-label="панель-навигации" class="header__nav">
+            <div class="header__nav-wrap">
+              <ul class="header__nav-list">
+                <li class="header__nav-item">
+                  <a href="#about" class="header__nav-link">О нас</a>
+                </li>
+                <li class="header__nav-item">
+                  <a href="#gallery" class="header__nav-link">Галерея</a>
+                </li>
+                <li class="header__nav-item">
+                  <a href="#artists" class="header__nav-link">Каталог</a>
+                </li>
+                <li class="header__nav-item">
+                  <a href="#events" class="header__nav-link">События</a>
+                </li>
+                <li class="header__nav-item">
+                  <a href="#projects" class="header__nav-link">Проекты</a>
+                </li>
+                <li class="header__nav-item">
+                  <a href="#footer" class="header__nav-link">Контакты</a>
+                </li>
+              </ul>
+              <a class="header__nav-btn" tabindex="0">
+                <svg class="header__nav-enter" width="75" height="20" viewBox="0 0 75 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M22.3809 6.15039H26.0107C27.7158 6.15039 28.9492 6.40527 29.7109 6.91504C30.4727 7.4248 30.8535 8.23047 30.8535 9.33203C30.8535 10.0938 30.6396 10.7236 30.2119 11.2217C29.79 11.7139 29.1719 12.0332 28.3574 12.1797V12.2676C30.3086 12.6016 31.2842 13.627 31.2842 15.3438C31.2842 16.4922 30.8945 17.3887 30.1152 18.0332C29.3418 18.6777 28.2578 19 26.8633 19H22.3809V6.15039ZM23.875 11.6523H26.3359C27.3906 11.6523 28.1494 11.4883 28.6123 11.1602C29.0752 10.8262 29.3066 10.2666 29.3066 9.48145C29.3066 8.76074 29.0488 8.24219 28.5332 7.92578C28.0176 7.60352 27.1973 7.44238 26.0723 7.44238H23.875V11.6523ZM23.875 12.918V17.7256H26.5557C27.5928 17.7256 28.3721 17.5264 28.8936 17.1279C29.4209 16.7236 29.6846 16.0938 29.6846 15.2383C29.6846 14.4414 29.415 13.8555 28.876 13.4805C28.3428 13.1055 27.5283 12.918 26.4326 12.918H23.875ZM42.1475 14.1748C42.1475 15.7451 41.752 16.9727 40.9609 17.8574C40.1699 18.7363 39.0771 19.1758 37.6826 19.1758C36.8213 19.1758 36.0566 18.9736 35.3887 18.5693C34.7207 18.165 34.2051 17.585 33.8418 16.8291C33.4785 16.0732 33.2969 15.1885 33.2969 14.1748C33.2969 12.6045 33.6895 11.3828 34.4746 10.5098C35.2598 9.63086 36.3496 9.19141 37.7441 9.19141C39.0918 9.19141 40.1611 9.63965 40.9521 10.5361C41.749 11.4326 42.1475 12.6455 42.1475 14.1748ZM34.8086 14.1748C34.8086 15.4053 35.0547 16.3428 35.5469 16.9873C36.0391 17.6318 36.7627 17.9541 37.7178 17.9541C38.6729 17.9541 39.3965 17.6348 39.8887 16.9961C40.3867 16.3516 40.6357 15.4111 40.6357 14.1748C40.6357 12.9502 40.3867 12.0215 39.8887 11.3887C39.3965 10.75 38.667 10.4307 37.7002 10.4307C36.7451 10.4307 36.0244 10.7441 35.5381 11.3711C35.0518 11.998 34.8086 12.9326 34.8086 14.1748ZM46.085 9.36719V15.4756L46.0234 17.0752L45.9971 17.5762L51.209 9.36719H53.0283V19H51.666V13.1113L51.6924 11.9512L51.7363 10.8086L46.5332 19H44.7139V9.36719H46.085ZM48.8359 8.09277C47.752 8.09277 46.9609 7.88477 46.4629 7.46875C45.9648 7.04688 45.6865 6.35547 45.6279 5.39453H46.999C47.0518 6.00391 47.21 6.42871 47.4736 6.66895C47.7432 6.90918 48.209 7.0293 48.8711 7.0293C49.4746 7.0293 49.9199 6.90039 50.207 6.64258C50.5 6.38477 50.6787 5.96875 50.7432 5.39453H52.123C52.0527 6.32031 51.7568 7.00293 51.2354 7.44238C50.7139 7.87598 49.9141 8.09277 48.8359 8.09277ZM62.6172 10.6152H59.4883V19H58.0293V10.6152H54.9355V9.36719H62.6172V10.6152ZM65.8955 9.36719V15.4756L65.834 17.0752L65.8076 17.5762L71.0195 9.36719H72.8389V19H71.4766V13.1113L71.5029 11.9512L71.5469 10.8086L66.3438 19H64.5244V9.36719H65.8955Z" fill="white"/>
+                  <path d="M5.12056 15.0928L6.13889 16.1111L9.75 12.5L6.13889 8.88889L5.12056 9.90722L6.98389 11.7778H0V13.2222H6.98389L5.12056 15.0928ZM11.5556 6H1.44444C0.642778 6 0 6.65 0 7.44444V10.3333H1.44444V7.44444H11.5556V17.5556H1.44444V14.6667H0V17.5556C0 18.35 0.642778 19 1.44444 19H11.5556C12.35 19 13 18.35 13 17.5556V7.44444C13 6.65 12.35 6 11.5556 6Z" fill="white"/>
+                </svg>
+              </a>
+            </div>
+            <button class="btn-reset burger">
+              <span></span>
+            </button>
+          </nav>
+          <button class="search js-open-search" type="button">
+            <svg class="search-img" width="23" height="22" viewBox="0 0 23 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="6.8678" height="1.71695" transform="matrix(-0.718931 0.695081 0.718931 0.695081 4.9375 15.6534)" fill="white"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12.0969 18C7.53041 18 3.99692 14.3229 3.99692 10C3.99692 5.67715 7.53041 2 12.0969 2C16.6634 2 20.1969 5.67715 20.1969 10C20.1969 14.3229 16.6634 18 12.0969 18ZM12.0969 20C6.57408 20 2.09692 15.5228 2.09692 10C2.09692 4.47715 6.57408 0 12.0969 0C17.6198 0 22.0969 4.47715 22.0969 10C22.0969 15.5228 17.6198 20 12.0969 20Z" fill="white"/>
+            </svg>
+          </button>
+          <form class="form js-form" action="https://jsonplaceholder.typicode.com/posts" method="POST">
+            <button class="search-btn" type="submit">
+              <svg class="search-img" width="23" height="22" viewBox="0 0 23 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="6.8678" height="1.71695" transform="matrix(-0.718931 0.695081 0.718931 0.695081 4.9375 15.6534)" fill="white"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M12.0969 18C7.53041 18 3.99692 14.3229 3.99692 10C3.99692 5.67715 7.53041 2 12.0969 2C16.6634 2 20.1969 5.67715 20.1969 10C20.1969 14.3229 16.6634 18 12.0969 18ZM12.0969 20C6.57408 20 2.09692 15.5228 2.09692 10C2.09692 4.47715 6.57408 0 12.0969 0C17.6198 0 22.0969 4.47715 22.0969 10C22.0969 15.5228 17.6198 20 12.0969 20Z" fill="white"/>
+              </svg>
+            </button>
+            <input class="search-input" type="text" placeholder="Поиск по сайту" name="search">
+            <button class="close-btn js-close" type="button">
+              <svg width="22" height="22" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g opacity="0.7">
+                <rect width="37.2801" height="3.72801" transform="matrix(0.707093 0.707121 -0.707093 0.707121 2.63867 0)" fill="white"/>
+                <rect width="37.2801" height="3.72801" transform="matrix(0.707093 -0.707121 0.707093 0.707121 -0.000976562 26.3615)" fill="white"/>
+                </g>
+              </svg>
+            </button>
+          </form>
+        </div>
+      </div>
+
+
+      <div class="header__bottom">
+        <div class="container">
+          <div class="header__bottom-wrap">
+            <ul class="header__bottom-list">
+              <li class="header__bottom-item">
+                <button class="header__bottom-btn" data-path="one">
+                  <span class="header__bottom-heading">Реализм</span>
+                  <span class="header__bottom-icon"></span>
+                </button>
+                <div class="header__bottom-dropdown" data-target="one">
+                  <div class="header__bottom-dropdown-wrap" data-simplebar>
+                    <ul class="header__dropdown-list">
+                      <li class="header__dropdown-item"><a href="#" class="header__dropdown-link_tintoretto header__dropdown-link">Тинторрето</a></li>
+                      <li class="header__dropdown-item"><a href="#" class="header__dropdown-link_fridrih header__dropdown-link">Фридрих</a></li>
+                      <li class="header__dropdown-item"><a href="#" class="header__dropdown-link_leo header__dropdown-link">Леонардо</a></li>
+                      <li class="header__dropdown-item"><a href="#" class="header__dropdown-link_verokkio header__dropdown-link">Верроккьо</a></li>
+                      <li class="header__dropdown-item"><a href="#" class="header__dropdown-link_tintoretto header__dropdown-link">Тинторрето</a></li>
+                      <li class="header__dropdown-item"><a href="#" class="header__dropdown-link_tintoretto header__dropdown-link">Тинторрето</a></li>
+                      <li class="header__dropdown-item"><a href="#" class="header__dropdown-link_tintoretto header__dropdown-link">Тинторрето</a></li>
+                      <li class="header__dropdown-item"><a href="#" class="header__dropdown-link_fridrih header__dropdown-link">Фридрих</a></li>
+                      <li class="header__dropdown-item"><a href="#" class="header__dropdown-link_leo header__dropdown-link">Леонардо</a></li>
+                      <li class="header__dropdown-item"><a href="#" class="header__dropdown-link_verokkio header__dropdown-link">Верроккьо</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li class="header__bottom-item">
+                <button class="header__bottom-btn" data-path="two">
+                  <span class="header__bottom-heading">Импрессионизм</span>
+                  <span class="header__bottom-icon"></span>
+                </button>
+                <div class="header__bottom-dropdown" data-target="two">
+                  <div class="header__bottom-dropdown-wrap" data-simplebar>
+                    <ul class="header__dropdown-list">
+                      <li class="header__dropdown-item"><a href="" class="header__dropdown-link_mone header__dropdown-link">Моне</a></li>
+                      <li class="header__dropdown-item"><a href="" class="header__dropdown-link_sisley header__dropdown-link">Сислей</a></li>
+                      <li class="header__dropdown-item"><a href="" class="header__dropdown-link_mane header__dropdown-link">Мане</a></li>
+                      <li class="header__dropdown-item"><a href="" class="header__dropdown-link_renuor header__dropdown-link">Ренуар</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li class="header__bottom-item">
+                <button class="header__bottom-btn" data-path="three">
+                  <span class="header__bottom-heading">Постимпрессионизм</span>
+                  <span class="header__bottom-icon"></span>
+                </button>
+                <div class="header__bottom-dropdown" data-target="three">
+                  <div class="header__bottom-dropdown-wrap" data-simplebar>
+                    <ul class="header__dropdown-list">
+                      <li class="header__dropdown-item"><a href="" class="header__dropdown-link_vanhgog header__dropdown-link">Ван Гог</a></li>
+                      <li class="header__dropdown-item"><a href="" class="header__dropdown-link_sezan header__dropdown-link">Сезанн</a></li>
+                      <li class="header__dropdown-item"><a href="" class="header__dropdown-link_gogen header__dropdown-link">Гоген</a></li>
+                      <li class="header__dropdown-item"><a href="" class="header__dropdown-link_sera header__dropdown-link">Сёра</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li class="header__bottom-item">
+                <button class="header__bottom-btn" data-path="four">
+                  <span class="header__bottom-heading">Авангард</span>
+                  <span class="header__bottom-icon"></span>
+                </button>
+                <div class="header__bottom-dropdown" data-target="four">
+                  <div class="header__bottom-dropdown-wrap" data-simplebar>
+                    <ul class="header__dropdown-list">
+                      <li class="header__dropdown-item"><a href="" class="header__dropdown-link_kandinskiy header__dropdown-link">Кандинский</a></li>
+                      <li class="header__dropdown-item"><a href="" class="header__dropdown-link_marineti header__dropdown-link">Маринетти</a></li>
+                      <li class="header__dropdown-item"><a href="" class="header__dropdown-link_malevich header__dropdown-link">Малевич</a></li>
+                      <li class="header__dropdown-item"><a href="" class="header__dropdown-link_picaso header__dropdown-link">Пикассо</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li class="header__bottom-item">
+                <button class="header__bottom-btn" data-path="five">
+                  <span class="header__bottom-heading">Футуризм</span>
+                  <span class="header__bottom-icon"></span>
+                </button>
+                <div class="header__bottom-dropdown" data-target="five">
+                  <div class="header__bottom-dropdown-wrap" data-simplebar>
+                    <ul class="header__dropdown-list">
+                      <li class="header__dropdown-item"><a href="" class="header__dropdown-link_karra header__dropdown-link">Карра</a></li>
+                      <li class="header__dropdown-item"><a href="" class="header__dropdown-link_pratella header__dropdown-link">Прателла</a></li>
+                      <li class="header__dropdown-item"><a href="" class="header__dropdown-link_severini header__dropdown-link">Северини</a></li>
+                      <li class="header__dropdown-item"><a href="" class="header__dropdown-link_balla header__dropdown-link">Балла</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+
+            </ul>
+            <form action="GET" class="header__form">
+              <button class="header__form-btn">
+                <svg aria-label="кнопка поиска" class="search" width="25" height="25" viewBox="0 0 23 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="6.8678" height="1.71695" transform="matrix(-0.718931 0.695081 0.718931 0.695081 4.9375 15.6534)" fill="white"/>
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M12.0969 18C7.53041 18 3.99692 14.3229 3.99692 10C3.99692 5.67715 7.53041 2 12.0969 2C16.6634 2 20.1969 5.67715 20.1969 10C20.1969 14.3229 16.6634 18 12.0969 18ZM12.0969 20C6.57408 20 2.09692 15.5228 2.09692 10C2.09692 4.47715 6.57408 0 12.0969 0C17.6198 0 22.0969 4.47715 22.0969 10C22.0969 15.5228 17.6198 20 12.0969 20Z" fill="white"/>
+                  </svg>
+              </button>
+              <textarea class="header__form-textarea" aria-label="поле ввода поиска по сайту" name="search" placeholder="Поиск по сайту"></textarea>
+            </form>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="hero top-wrapper__hero">
+      <div class="container">
+        <div class="hero__content">
+          <h2 class="hero__content-title">Прикоснитесь к&nbsp;прекрасному</h2>
+          <p class="hero__content-text">Мы вынуждены отталкиваться от того, что реализация намеченных плановых заданий создаёт предпосылки для новых предложений.</p>
+          <!-- плавно переводит пользователя в конец сайта, к карте -->
+          <a href="#map" class="btn hero__content-btn">Подписаться на рассылку</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="top-wrapper__slider js-back-slider">
+      <div class="swiper-wrapper">
+        <div class="top-wrapper__slide swiper-slide slide-1"></div>
+        <div class="top-wrapper__slide swiper-slide slide slide-2"></div>
+        <div class="top-wrapper__slide swiper-slide slide-3"></div>
+      </div>
+    </div>
+
+  </div>
+
+
+    <section class="about" id="about">
+      <div class="container">
+        <div class="about__content">
+          <h3 class="second-heading about__heading">О нас</h3>
+          <p class="about__text">Ясность нашей позиции очевидна: семантический разбор внешних противодействий однозначно определяет каждого участника как способного принимать собственные решения касаемо распределения внутренних резервов и ресурсов. Не следует, однако, забывать, что высококачественный прототип будущего проекта влечет за собой процесс внедрения и модернизации модели развития. Повседневная практика показывает, что высокое качество позиционных исследований создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса распределения внутренних резервов и ресурсов. В рамках спецификации современных стандартов, действия представителей оппозиции набирают популярность среди определенных слоев населения, а значит, должны быть разоблачены.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery" id="gallery">
+      <div class="container">
+        <div class="gallery__content-wrap">
+          <div class="gallery__left-elem">
+            <h3 class="second-heading gallery__heading">Галерея</h3>
+            <h4 class="gallery__filtr">Фильтр:</h4>
+              <select tabindex="0" class="gallery__choices">
+                <option value="painting">Живопись</option>
+                <option value="drawing">Рисунок</option>
+                <option value="sculpture">Скульптура</option>
+              </select>
+          </div>
+          <div class="gallery__swiper">
+            <div class="gallery__swiper-navigation">
+              <button class="gallery__swiper-arrow gallery__swiper-prev" aria-label="К предыдущему слайду"></button>
+              <div class="gallery__swiper-pagination"></div>
+              <button class="gallery__swiper-arrow gallery__swiper-next" aria-label="К следующему слайду"></button>
+            </div>
+            <div class="swiper-containers slides-container">
+              <div class="swiper-wrapper">
+                <a class="swiper-slide gallery__swiper-slide gallery__swiper-btn" data-path="form-popup" href="#">
+                  <picture>
+                    <source srcset="img/gallery_1-320.jpg" media="(max-width: 550px)">
+                    <source srcset="img/gallery_1-768.jpg" media="(max-width: 1020px)">
+                    <source srcset="img/gallery_1-1024.jpg" media="(max-width: 1260px)">
+                    <img class="gallery__swiper-image" src="img/gallery_1.jpg" alt="">
+                  </picture>
+                </a>
+                <a class="swiper-slide gallery__swiper-slide gallery__swiper-btn" data-path="form-popup" href="#">
+                  <picture>
+                    <source srcset="img/gallery_2-320.jpg" media="(max-width: 550px)">
+                    <source srcset="img/gallery_2-768.jpg" media="(max-width: 1020px)">
+                    <source srcset="img/gallery_2-1024.jpg" media="(max-width: 1260px)">
+                    <img class="gallery__swiper-image" src="img/gallery_2.jpg" alt="">
+                  </picture>
+                </a>
+                <a class="swiper-slide gallery__swiper-slide gallery__swiper-btn" data-path="form-popup" href="#">
+                  <picture>
+                    <source srcset="img/gallery_3-320.jpg" media="(max-width: 550px)">
+                    <source srcset="img/gallery_3-768.jpg" media="(max-width: 1020px)">
+                    <source srcset="img/gallery_3-1024.jpg" media="(max-width: 1260px)">
+                    <img class="gallery__swiper-image" src="img/gallery_3.jpg" alt="">
+                  </picture>
+                </a>
+                <a class="swiper-slide gallery__swiper-slide gallery__swiper-btn" data-path="form-popup" href="#">
+                  <picture>
+                    <source srcset="img/gallery_7-320.jpg" media="(max-width: 550px)">
+                    <source srcset="img/gallery_7-768.jpg" media="(max-width: 1020px)">
+                    <source srcset="img/gallery_7-1024.jpg" media="(max-width: 1260px)">
+                    <img class="gallery__swiper-image" src="img/gallery_7.jpg" alt="">
+                  </picture>
+                </a>
+                <a class="swiper-slide gallery__swiper-slide gallery__swiper-btn" data-path="form-popup" href="#">
+                  <picture>
+                    <source srcset="img/gallery_8-320.jpg" media="(max-width: 550px)">
+                    <source srcset="img/gallery_8-768.jpg" media="(max-width: 1020px)">
+                    <source srcset="img/gallery_8-1024.jpg" media="(max-width: 1260px)">
+                    <img class="gallery__swiper-image" src="img/gallery_8.jpg" alt="">
+                  </picture>
+                </a>
+                <a class="swiper-slide gallery__swiper-slide gallery__swiper-btn" data-path="form-popup" href="#">
+                  <picture>
+                    <source srcset="img/gallery_9-320.jpg" media="(max-width: 550px)">
+                    <source srcset="img/gallery_9-768.jpg" media="(max-width: 1020px)">
+                    <source srcset="img/gallery_9-1024.jpg" media="(max-width: 1260px)">
+                    <img class="gallery__swiper-image" src="img/gallery_9.jpg" alt="">
+                  </picture>
+                </a>
+                <a class="swiper-slide gallery__swiper-slide gallery__swiper-btn" data-path="form-popup" href="#">
+                  <picture>
+                    <source srcset="img/gallery_13-320.jpg" media="(max-width: 550px)">
+                    <source srcset="img/gallery_13-768.jpg" media="(max-width: 1020px)">
+                    <source srcset="img/gallery_13-1024.jpg" media="(max-width: 1260px)">
+                    <img class="gallery__swiper-image" src="img/gallery_13.jpg" alt="">
+                  </picture>
+                </a>
+                <a class="swiper-slide gallery__swiper-slide gallery__swiper-btn" data-path="form-popup" href="#">
+                  <picture>
+                    <source srcset="img/gallery_14-320.jpg" media="(max-width: 550px)">
+                    <source srcset="img/gallery_14-768.jpg" media="(max-width: 1020px)">
+                    <source srcset="img/gallery_14-1024.jpg" media="(max-width: 1260px)">
+                    <img class="gallery__swiper-image" src="img/gallery_14.jpg" alt="">
+                  </picture>
+                </a>
+                <a class="swiper-slide gallery__swiper-slide gallery__swiper-btn" data-path="form-popup" href="#">
+                  <picture>
+                    <source srcset="img/gallery_15-320.jpg" media="(max-width: 550px)">
+                    <source srcset="img/gallery_15-768.jpg" media="(max-width: 1020px)">
+                    <source srcset="img/gallery_15-1024.jpg" media="(max-width: 1260px)">
+                    <img class="gallery__swiper-image" src="img/gallery_15.jpg" alt="">
+                  </picture>
+                </a>
+                <a class="swiper-slide gallery__swiper-slide gallery__swiper-btn" data-path="form-popup" href="#">
+                  <picture>
+                    <source srcset="img/gallery_19-320.jpg" media="(max-width: 550px)">
+                    <source srcset="img/gallery_19-768.jpg" media="(max-width: 1020px)">
+                    <source srcset="img/gallery_19-1024.jpg" media="(max-width: 1260px)">
+                    <img class="gallery__swiper-image" src="img/gallery_19.jpg" alt="">
+                  </picture>
+                </a>
+                <a class="swiper-slide gallery__swiper-slide gallery__swiper-btn" data-path="form-popup" href="#">
+                  <picture>
+                    <source srcset="img/gallery_20-320.jpg" media="(max-width: 550px)">
+                    <source srcset="img/gallery_20-768.jpg" media="(max-width: 1020px)">
+                    <source srcset="img/gallery_20-1024.jpg" media="(max-width: 1260px)">
+                    <img class="gallery__swiper-image" src="img/gallery_20.jpg" alt="">
+                  </picture>
+                </a>
+                <a class="swiper-slide gallery__swiper-slide gallery__swiper-btn" data-path="form-popup" href="#">
+                  <picture>
+                    <source srcset="img/gallery_21-320.jpg" media="(max-width: 550px)">
+                    <source srcset="img/gallery_21-768.jpg" media="(max-width: 1020px)">
+                    <source srcset="img/gallery_21-1024.jpg" media="(max-width: 1260px)">
+                    <img class="gallery__swiper-image" src="img/gallery_21.jpg" alt="">
+                  </picture>
+                </a>
+                <a class="swiper-slide gallery__swiper-slide gallery__swiper-btn" data-path="form-popup" href="#">
+                  <picture>
+                    <source srcset="img/gallery_4-320.jpg" media="(max-width: 550px)">
+                    <source srcset="img/gallery_4-768.jpg" media="(max-width: 1020px)">
+                    <source srcset="img/gallery_4-1024.jpg" media="(max-width: 1260px)">
+                    <img class="gallery__swiper-image" src="img/gallery_4.jpg" alt="">
+                  </picture>
+                </a>
+                <a class="swiper-slide gallery__swiper-slide gallery__swiper-btn" data-path="form-popup" href="#">
+                  <picture>
+                    <source srcset="img/gallery_5-320.jpg" media="(max-width: 550px)">
+                    <source srcset="img/gallery_5-768.jpg" media="(max-width: 1020px)">
+                    <source srcset="img/gallery_5-1024.jpg" media="(max-width: 1260px)">
+                    <img class="gallery__swiper-image" src="img/gallery_5.jpg" alt="">
+                  </picture>
+                </a>
+                <a class="swiper-slide gallery__swiper-slide gallery__swiper-btn" data-path="form-popup" href="#">
+                  <picture>
+                    <source srcset="img/gallery_6-320.jpg" media="(max-width: 550px)">
+                    <source srcset="img/gallery_6-768.jpg" media="(max-width: 1020px)">
+                    <source srcset="img/gallery_6-1024.jpg" media="(max-width: 1260px)">
+                    <img class="gallery__swiper-image" src="img/gallery_6.jpg" alt="">
+                  </picture>
+                </a>
+                <a class="swiper-slide gallery__swiper-slide gallery__swiper-btn" data-path="form-popup" href="#">
+                  <picture>
+                    <source srcset="img/gallery_10-320.jpg" media="(max-width: 550px)">
+                    <source srcset="img/gallery_10-768.jpg" media="(max-width: 1020px)">
+                    <source srcset="img/gallery_10-1024.jpg" media="(max-width: 1260px)">
+                    <img class="gallery__swiper-image" src="img/gallery_10.jpg" alt="">
+                  </picture>
+                </a>
+                <a class="swiper-slide gallery__swiper-slide gallery__swiper-btn" data-path="form-popup" href="#">
+                  <picture>
+                    <source srcset="img/gallery_11-320.jpg" media="(max-width: 550px)">
+                    <source srcset="img/gallery_11-768.jpg" media="(max-width: 1020px)">
+                    <source srcset="img/gallery_11-1024.jpg" media="(max-width: 1260px)">
+                    <img class="gallery__swiper-image" src="img/gallery_11.jpg" alt="">
+                  </picture>
+                </a>
+                <a class="swiper-slide gallery__swiper-slide gallery__swiper-btn" data-path="form-popup" href="#">
+                  <picture>
+                    <source srcset="img/gallery_12-320.jpg" media="(max-width: 550px)">
+                    <source srcset="img/gallery_12-768.jpg" media="(max-width: 1020px)">
+                    <source srcset="img/gallery_12-1024.jpg" media="(max-width: 1260px)">
+                    <img class="gallery__swiper-image" src="img/gallery_12.jpg" alt="">
+                  </picture>
+                </a>
+                <a class="swiper-slide gallery__swiper-slide gallery__swiper-btn" data-path="form-popup" href="#">
+                  <picture>
+                    <source srcset="img/gallery_16-320.jpg" media="(max-width: 550px)">
+                    <source srcset="img/gallery_16-768.jpg" media="(max-width: 1020px)">
+                    <source srcset="img/gallery_16-1024.jpg" media="(max-width: 1260px)">
+                    <img class="gallery__swiper-image" src="img/gallery_16.jpg" alt="">
+                  </picture>
+                </a>
+                <a class="swiper-slide gallery__swiper-slide gallery__swiper-btn" data-path="form-popup" href="#">
+                  <picture>
+                    <source srcset="img/gallery_17-320.jpg" media="(max-width: 550px)">
+                    <source srcset="img/gallery_17-768.jpg" media="(max-width: 1020px)">
+                    <source srcset="img/gallery_17-1024.jpg" media="(max-width: 1260px)">
+                    <img class="gallery__swiper-image" src="img/gallery_17.jpg" alt="">
+                  </picture>
+                </a>
+                <a class="swiper-slide gallery__swiper-slide gallery__swiper-btn" data-path="form-popup" href="#">
+                  <picture>
+                    <source srcset="img/gallery_18-320.jpg" media="(max-width: 550px)">
+                    <source srcset="img/gallery_18-768.jpg" media="(max-width: 1020px)">
+                    <source srcset="img/gallery_18-1024.jpg" media="(max-width: 1260px)">
+                    <img class="gallery__swiper-image" src="img/gallery_18.jpg" alt="">
+                  </picture>
+                </a>
+                <a class="swiper-slide gallery__swiper-slide gallery__swiper-btn" data-path="form-popup" href="#">
+                  <picture>
+                    <source srcset="img/gallery_22-320.jpg" media="(max-width: 550px)">
+                    <source srcset="img/gallery_22-768.jpg" media="(max-width: 1020px)">
+                    <source srcset="img/gallery_22-1024.jpg" media="(max-width: 1260px)">
+                    <img class="gallery__swiper-image" src="img/gallery_22.jpg" alt="">
+                  </picture>
+                </a>
+                <a class="swiper-slide gallery__swiper-slide gallery__swiper-btn" data-path="form-popup" href="#">
+                  <picture>
+                    <source srcset="img/gallery_23-320.jpg" media="(max-width: 550px)">
+                    <source srcset="img/gallery_23-768.jpg" media="(max-width: 1020px)">
+                    <source srcset="img/gallery_23-1024.jpg" media="(max-width: 1260px)">
+                    <img class="gallery__swiper-image" src="img/gallery_23.jpg" alt="">
+                  </picture>
+                </a>
+                <a class="swiper-slide gallery__swiper-slide gallery__swiper-btn" data-path="form-popup" href="#">
+                  <picture>
+                    <source srcset="img/gallery_24-320.jpg" media="(max-width: 550px)">
+                    <source srcset="img/gallery_24-768.jpg" media="(max-width: 1020px)">
+                    <source srcset="img/gallery_24-1024.jpg" media="(max-width: 1260px)">
+                    <img class="gallery__swiper-image" src="img/gallery_24.jpg" alt="">
+                  </picture>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="gallery__last">
+            <div class="gallery__last-content">
+              <form action="/" method="post">
+                <div class="questions">
+
+                  <label class="checkbox-wrap">
+                    <input class="checkbox visually-hidden" type="checkbox" name="check-one" checked>
+                    <div class="checkbox-content">
+                      <span class="visual-check"></span>
+                      <span class="check-text">XIX век</span>
+                      <span class="close-icon"></span>
+                    </div>
+                  </label>
+
+                  <label class="checkbox-wrap">
+                    <input class="checkbox visually-hidden" type="checkbox" name="check-two" checked>
+                    <div class="checkbox-content">
+                      <span class="visual-check"></span>
+                      <span class="check-text">XX век</span>
+                      <span class="close-icon"></span>
+                    </div>
+                  </label>
+
+                  <label class="checkbox-wrap">
+                    <input class="checkbox visually-hidden" type="checkbox" name="check-three">
+                    <div class="checkbox-content">
+                      <span class="visual-check"></span>
+                      <span class="check-text">Современность</span>
+                      <span class="close-icon"></span>
+                    </div>
+                  </label>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="artists" id="artists">
+      <div class="container">
+        <div class="artists__top-wrap">
+          <h3 class="second-heading artists__heading">Каталог</h3>
+           <p class="tab-content-desk">Акционеры крупнейших компаний, которые представляют собой яркий пример континентально-европейского типа политической культуры, будут объявлены нарушающими общечеловеческие нормы этики и морали. Являясь всего лишь частью общей картины, стремящиеся вытеснить традиционное производство, нанотехнологии и по сей день остаются уделом либералов, которые жаждут быть функционально разнесены на независимые элементы.</p>
+        </div>
+        <div class="tab-content tab-active" data-target="active-block">
+          <div class="article-content__wrap">
+            <article class="artists-content article-tabActive" data-target="first">
+              <div class="artists__bottom-left">
+                <div class="artists__bottom-back">
+                  <picture>
+                    <source srcset="img/artists_back-320.jpg" media="(max-width: 550px)">
+                    <source srcset="img/artists_back-768.jpg" media="(max-width: 1020px)">
+                    <source srcset="img/artists_back-1024.jpg" media="(max-width: 1260px)">
+                    <img class="artists__bottom-img" src="img/artists_back.jpg" alt="Пример картины Бенедетто ди Биндо">
+                  </picture>
+                </div>
+                <div class="artists__bottom-text">
+                  <h5 class="artists__bottom-name">Доменико Гирландайо</h5>
+                  <p class="artists__bottom-data">2 июня 1448 — 11 января 1494.</p>
+                  <p class="artists__bottom-desk">Один из ведущих флорентийских художников Кватроченто, основатель художественной династии, которую продолжили его брат Давид и сын Ридольфо. Глава художественной мастерской, где юный Микеланджело в течение года овладевал профессиональными навыками. Автор фресковых циклов, в которых выпукло, со всевозможными подробностями показана домашняя жизнь библейских персонажей (в их роли выступают знатные граждане Флоренции в костюмах того времени).</p>
+                </div>
+              </div>
+            </article>
+            <article class="artists-content" data-target="second">
+                <img class="artists__bottom-img" src="img/artists_back2.jpg" alt="Пример картины Бергоньоне Амброджо">
+                <div class="artists__bottom-text">
+                  <h5 class="artists__bottom-name">Амброджо Бергоньоне</h5>
+                  <p class="artists__bottom-data">1453 — 1523.</p>
+                  <p class="artists__bottom-desk">Итальянский художник ломбардской школы</p>
+                </div>
+            </article>
+            <article class="artists-content" data-target="third">
+              <img class="artists__bottom-img" src="img/artists_back3.jpg" alt="Пример картины Бенедетто ди Биндо">
+              <div class="artists__bottom-text">
+                <h5 class="artists__bottom-name">Бенедетто ди Биндо</h5>
+                <p class="artists__bottom-data">1380 — 1417.</p>
+                <p class="artists__bottom-desk">Бенедетто ди Биндо остался в истории искусства как сиенский художник, так сказать, «второго ряда», несмотря на то, что за свою короткую жизнь он выполнил ряд весьма престижных заказов, включая работы в Сиенском соборе (работы в главном соборе республики второстепенным художникам не поручались). Обучение он прошёл у Таддео ди Бартоло, крупного сиенского мастера поздней готики, в боттеге которого Бенедетто трудился вместе с Грегорио ди Чекко. Наибольшее влияние на его творчество оказали работы Симоне Мартини, в частности в выборе колорита, а тонко проработанные лица его персонажей напоминают произведения Джованни да Милано.</p>
+              </div>
+            </article>
+            <article class="artists-content" data-target="other">
+                <img class="artists__bottom-img" src="img/unknown_artist.jpg" alt="Пример картины этого художника отсутствует">
+                <div class="artists__bottom-text">
+                  <h5 class="artists__bottom-name">Что мы о нём знаем?</h5>
+                  <p class="artists__bottom-desk">Пока ничего... Зато мы точно знаем, что в галерее есть на что посмотреть!</p>
+                  <a href="#gallery" class="artists__bottom-gallery">В галерею</a>
+                </div>
+            </article>
+            <ul class="ac-list" id="accordion">
+              <li class="ac-list__item">
+                <h4 class="artists__heading3">
+                  <span class="artists__heading3-text">
+                    <span class="artists__heading3-wrap">C 1400 по 1499 гг.</span>
+                  </span>
+                  <svg class="artists__icon" width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="artists__icon-round" d="M49 25C49 11.7452 38.2548 1.00001 25 1.00001C11.7452 1.00001 1 11.7452 1 25C1 38.2548 11.7452 49 25 49C38.2548 49 49 38.2548 49 25Z" fill="#ECECEC" stroke="#ECECEC" stroke-width="2" />
+                    <path d="M33.3333 26.6667L25 18.3333L16.6667 26.6667" stroke="black" />
+                  </svg>
+                </h4>
+                <div class="artists__catalog ac-list__item-bottom">
+                  <button class="ac-list__item-tab artists__point" data-path="third">Бенедетто ди Биндо</button>
+                  <button class="ac-list__item-tab artists__point" data-path="second">Бергоньоне, Амброджо</button>
+                  <button class="ac-list__item-tab artists__point" data-path="other">Биссоло, Франческо</button>
+                  <button class="ac-list__item-tab artists__point" data-path="other">Больтраффио, Джованни</button>
+                  <button class="ac-list__item-tab artists__point" data-path="other">Бонсиньори, Франческо</button>
+                  <button class="ac-list__item-tab artists__point" data-path="other">Боттичини, Рафаэлло</button>
+                  <button class="ac-list__item-tab artists__point" data-path="other">Брамантино</button><br>
+                  <button class="ac-list__item-tab artists__point" data-path="other">Бреа, Людовико</button>
+                  <button class="ac-list__item-tab artists__point" data-path="other">Бьяджо д’Антонио Туччи</button>
+                  <button class="ac-list__item-tab artists__point" data-path="other">Веккьетта</button><br>
+                  <button class="ac-list__item-tab artists__point" data-path="other">Андреа Верроккьо</button>
+                  <button class="ac-list__item-tab artists__point" data-path="first" autofocus>Доменико Гирландайо</button>
+                  <button class="ac-list__item-tab artists__point" data-path="other">Беноццо Гоццоли</button>
+                  <button class="ac-list__item-tab artists__point" data-path="other">Граначчи, Франческо</button>
+                  <button class="ac-list__item-tab artists__point" data-path="other">Грегорио ди Чекко</button>
+                  <button class="ac-list__item-tab artists__point" data-path="other">Джованни да Удине</button>
+                  <button class="ac-list__item-tab artists__point" data-path="other">Джованни ди Паоло</button><br>
+                  <button class="ac-list__item-tab artists__point" data-path="other">Джорджоне</button>
+                  <button class="ac-list__item-tab artists__point" data-path="other">Парентино, Бернардо</button>
+                  <button class="ac-list__item-tab artists__point" data-path="other">Пезеллино</button><br>
+                  <button class="ac-list__item-tab artists__point" data-path="other">Пьетро Перуджино</button>
+                  <button class="ac-list__item-tab artists__point" data-path="other">Перуцци, Бальдассаре</button>
+                  <button class="ac-list__item-tab artists__point" data-path="other">Пизанелло</button><br>
+                  <button class="ac-list__item-tab artists__point" data-path="other">Пинтуриккьо</button>
+                </div>
+
+              </li>
+              <li class="ac-list__item">
+                <h4 class="artists__heading3">
+                  <span class="artists__heading3-text">
+                    <span class="artists__heading3-wrap">C 1500 по 1599 гг.</span>
+                  </span>
+                  <svg class="artists__icon" width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="artists__icon-round" d="M49 25C49 11.7452 38.2548 1.00001 25 1.00001C11.7452 1.00001 1 11.7452 1 25C1 38.2548 11.7452 49 25 49C38.2548 49 49 38.2548 49 25Z" fill="#ECECEC" stroke="#ECECEC" stroke-width="2" />
+                    <path d="M33.3333 26.6667L25 18.3333L16.6667 26.6667" stroke="black" />
+                  </svg>
+                </h4>
+                <div class="ac-list__item-bottom-empty">
+                  <div class="ac-list__item-back"></div>
+                  <div class="artists__bottom-empty">
+                    <h5 class="artists__bottom-name">Здесь пока пусто</h5>
+                    <p class="artists__bottom-desk">А в галерее вы всегда можете найти что-то интересное для себя</p>
+                    <a href="#gallery" class="artists__bottom-gallery">В галерею</a>
+                  </div>
+                </div>
+
+              </li>
+              <li class="ac-list__item">
+                <h4 class="artists__heading3">
+                  <span class="artists__heading3-text">
+                    <span class="artists__heading3-wrap">C 1600 по 1699 гг.</span>
+                  </span>
+                  <svg class="artists__icon" width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="artists__icon-round" d="M49 25C49 11.7452 38.2548 1.00001 25 1.00001C11.7452 1.00001 1 11.7452 1 25C1 38.2548 11.7452 49 25 49C38.2548 49 49 38.2548 49 25Z" fill="#ECECEC" stroke="#ECECEC" stroke-width="2" />
+                    <path d="M33.3333 26.6667L25 18.3333L16.6667 26.6667" stroke="black" />
+                  </svg>
+                </h4>
+                <div class="ac-list__item-bottom">
+                  <div class="ac-list__item-bottom-empty">
+                    <div class="ac-list__item-back"></div>
+                    <div class="artists__bottom-empty">
+                      <h5 class="artists__bottom-name">Здесь пока пусто</h5>
+                      <p class="artists__bottom-desk">А в галерее вы всегда можете найти что-то интересное для себя</p>
+                      <a href="#gallery" class="artists__bottom-gallery">В галерею</a>
+                    </div>
+                  </div>
+                </div>
+
+              </li>
+              <li class="ac-list__item">
+                <h4 class="artists__heading3">
+                  <span class="artists__heading3-text">
+                    <span class="artists__heading3-wrap">C 1700 по 1799 гг.</span>
+                  </span>
+                  <svg class="artists__icon" width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="artists__icon-round" d="M49 25C49 11.7452 38.2548 1.00001 25 1.00001C11.7452 1.00001 1 11.7452 1 25C1 38.2548 11.7452 49 25 49C38.2548 49 49 38.2548 49 25Z" fill="#ECECEC" stroke="#ECECEC" stroke-width="2" />
+                    <path d="M33.3333 26.6667L25 18.3333L16.6667 26.6667" stroke="black" />
+                  </svg>
+                </h4>
+                <div class="ac-list__item-bottom">
+                  <div class="ac-list__item-bottom-empty">
+                    <div class="ac-list__item-back"></div>
+                    <div class="artists__bottom-empty">
+                      <h5 class="artists__bottom-name">Здесь пока пусто</h5>
+                      <p class="artists__bottom-desk">А в галерее вы всегда можете найти что-то интересное для себя</p>
+                      <a href="#gallery" class="artists__bottom-gallery">В галерею</a>
+                    </div>
+                  </div>
+                </div>
+
+              </li>
+              <li class="ac-list__item">
+                <h4 class="artists__heading3">
+                  <span class="artists__heading3-text">
+                    <span class="artists__heading3-wrap">C 1800 по 1899 гг.</span>
+                  </span>
+                  <svg class="artists__icon" width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="artists__icon-round" d="M49 25C49 11.7452 38.2548 1.00001 25 1.00001C11.7452 1.00001 1 11.7452 1 25C1 38.2548 11.7452 49 25 49C38.2548 49 49 38.2548 49 25Z" fill="#ECECEC" stroke="#ECECEC" stroke-width="2" />
+                    <path d="M33.3333 26.6667L25 18.3333L16.6667 26.6667" stroke="black" />
+                  </svg>
+                </h4>
+                <div class="ac-list__item-bottom">
+                  <div class="ac-list__item-bottom-empty">
+                    <div class="ac-list__item-back"></div>
+                    <div class="artists__bottom-empty">
+                      <h5 class="artists__bottom-name">Здесь пока пусто</h5>
+                      <p class="artists__bottom-desk">А в галерее вы всегда можете найти что-то интересное для себя</p>
+                      <a href="#gallery" class="artists__bottom-gallery">В галерею</a>
+                    </div>
+                  </div>
+                </div>
+
+              </li>
+              <li class="ac-list__item">
+                <h4 class="artists__heading3">
+                  <span class="artists__heading3-text">
+                    <span class="artists__heading3-wrap">C 1900 по 1999 гг.</span>
+                  </span>
+                  <svg class="artists__icon" width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="artists__icon-round" d="M49 25C49 11.7452 38.2548 1.00001 25 1.00001C11.7452 1.00001 1 11.7452 1 25C1 38.2548 11.7452 49 25 49C38.2548 49 49 38.2548 49 25Z" fill="#ECECEC" stroke="#ECECEC" stroke-width="2" />
+                    <path d="M33.3333 26.6667L25 18.3333L16.6667 26.6667" stroke="black" />
+                  </svg>
+                </h4>
+                <div class="ac-list__item-bottom">
+                  <div class="ac-list__item-bottom-empty">
+                    <div class="ac-list__item-back"></div>
+                    <div class="artists__bottom-empty">
+                      <h5 class="artists__bottom-name">Здесь пока пусто</h5>
+                      <p class="artists__bottom-desk">А в галерее вы всегда можете найти что-то интересное для себя</p>
+                      <a href="#gallery" class="artists__bottom-gallery">В галерею</a>
+                    </div>
+                  </div>
+                </div>
+
+              </li>
+              <li class="ac-list__item">
+                <h4 class="artists__heading3">
+                  <span class="artists__heading3-text">
+                    <span class="artists__heading3-wrap">C 2000 г.</span>
+                  </span>
+                  <svg class="artists__icon" width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="artists__icon-round" d="M49 25C49 11.7452 38.2548 1.00001 25 1.00001C11.7452 1.00001 1 11.7452 1 25C1 38.2548 11.7452 49 25 49C38.2548 49 49 38.2548 49 25Z" fill="#ECECEC" stroke="#ECECEC" stroke-width="2" />
+                    <path d="M33.3333 26.6667L25 18.3333L16.6667 26.6667" stroke="black" />
+                  </svg>
+                </h4>
+                <div class="ac-list__item-bottom">
+                  <div class="ac-list__item-bottom-empty">
+                    <div class="ac-list__item-back"></div>
+                    <div class="artists__bottom-empty">
+                      <h5 class="artists__bottom-name">Здесь пока пусто</h5>
+                      <p class="artists__bottom-desk">А в галерее вы всегда можете найти что-то интересное для себя</p>
+                      <a href="#gallery" class="artists__bottom-gallery">В галерею</a>
+                    </div>
+                  </div>
+                </div>
+
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="events" id="events">
+      <div class="container">
+        <h3 class="second-heading events__heading">События</h3>
+
+          <div class="slider-wrap">
+            <button class="events__swiper-btn events__swiper-prev js-events-prev" aria-label="К предыдущему слайду"></button>
+            <div class="events-slider js-events-slider">
+              <div class="swiper-wrapper">
+                <div class="events__slide events__slide-back1 swiper-slide">
+                  <div class="events__slide-content">
+                    <p class="events__slide-caption">Музей им. Щусева<br>с 20 марта по 30 апреля</p>
+                    <p class="events__slide-content-heading">Книжная гравюра в живом восприятии</p>
+                    <p class="events__slide-content-text">Один из ведущих флорентийских художников Кватроченто, основатель художественной династии, которую продолжили его брат Давид и сын Ридольфо.</p>
+                    <a href="#" class="events__slide-content-link">Подробнее</a>
+                  </div>
+                </div>
+                <div class="events__slide events__slide-back2 swiper-slide">
+                  <div class="events__slide-content">
+                    <p class="events__slide-caption">Музей им. Щусева<br>с 20 марта по 30 апреля</p>
+                    <p class="events__slide-content-heading">Книжная гравюра в живом восприятии</p>
+                    <p class="events__slide-content-text">Один из ведущих флорентийских художников Кватроченто, основатель художественной династии, которую продолжили его брат Давид и сын Ридольфо.</p>
+                    <a href="#" class="events__slide-content-link">Подробнее</a>
+                  </div>
+                </div>
+                <div class="events__slide events__slide-back3 swiper-slide">
+                  <div class="events__slide-content">
+                    <p class="events__slide-caption">Еврейский музей<br>с 31 марта по 21 апреля</p>
+                    <p class="events__slide-content-heading">Выставка «Формация 2020»</p>
+                    <p class="events__slide-content-text">Идейные соображения высшего порядка, а также современная методология разработки играет важную роль в формировании глубокомысленных рассуждений.</p>
+                    <a href="#" class="events__slide-content-link">Подробнее</a>
+                  </div>
+                </div>
+                <div class="events__slide events__slide-back4 swiper-slide">
+                  <div class="events__slide-content">
+                    <p class="events__slide-caption">Третьяковка на Крымском валу<br>с 30 марта по 30 апреля</p>
+                    <p class="events__slide-content-heading">XXIV Международная биеннале молодого искусства</p>
+                    <p class="events__slide-content-text">Внезапно, реплицированные с зарубежных источников, современные исследования.</p>
+                    <a href="#" class="events__slide-content-link">Подробнее</a>
+                  </div>
+                </div>
+                <div class="events__slide events__slide-back5 swiper-slide">
+                  <div class="events__slide-content">
+                    <p class="events__slide-caption">ММАМ<br>с 8 апреля по 20 мая </p>
+                    <p class="events__slide-content-heading">Джон Винзор. Фотографии из серии «Метафора серебра»</p>
+                    <p class="events__slide-content-text">Один из ведущих флорентийских художников Кватроченто, основатель художественной династии, которую продолжили его брат Давид и сын Ридольфо.</p>
+                    <a href="#" class="events__slide-content-link">Подробнее</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="events__swiper-btn events__swiper-next js-events-next" aria-label="К следующему слайду"></button>
+          </div>
+
+          <div class="events__swiper-pagination">
+            <span class="dote dote-active" tabindex="1" role="button" aria-label="перейти к первому слайду"></span>
+            <span class="dote" tabindex="2" role="button" aria-label="Перейти ко второму слайду"></span>
+            <span class="dote" tabindex="3" role="button" aria-label="перейти к третьему слайду"></span>
+            <span class="dote" tabindex="4" role="button" aria-label="перейти к чертвертому слайду"></span>
+            <span class="dote" tabindex="5" role="button" aria-label="перейти к пятом слайду"></span>
+          </div>
+
+      </div>
+    </section>
+
+    <section class="projects" id="projects">
+      <div class="container">
+        <h3 class="second-heading projects__heading">Проекты</h3>
+        <p class="projects__description">Предварительные выводы: постоянное информационно-пропагандистское обеспечение нашей деятельности однозначно фиксирует необходимость своевременного выполнения сверхзадачи. А ещё независимые государства смешаны с не уникальными данными до степени совершенной неузнаваемости, из-за чего возрастает их статус бесполезности. Прежде всего, постоянное информационно-пропагандистское <button class="projects__description-tooltip js-tooltip" data-tippy-content="Банальные, но неопровержимые выводы">i</button> обеспечение нашей деятельности однозначно фиксирует необходимость экономической целесообразности принимаемых решений. И нет сомнений, что действия представителей оппозиции могут быть рассмотрены <button class="projects__description-tooltip js-tooltip" data-tippy-content="Банальные, но неопровержимые выводы Банальные, но неопровержимые выводы">i</button> исключительно в&nbsp;разрезе маркетинговых и финансовых <button class="projects__description-tooltip js-tooltip" data-tippy-content="Банальные, но неопровержимые выводы Банальные, но неопровержимые выводы Банальные, но неопровержимые выводы">i</button> предпосылок. Банальные, но неопровержимые выводы, а также представители современных социальных резервов призывают нас к новым свершениям, которые, в свою очередь, должны быть смешаны с&nbsp;не&nbsp;уникальными данными до степени совершенной неузнаваемости. Подробнее: <a class="projects__description-details">blanchard-art.ru/projects</a></p>
+        <h4 class="projects__heading3">Партнёры проектов:</h4>
+
+        <div class="projects__slider-wrap partners-slider">
+          <button class="partners-slider__prev partners-slider__arrow js-partners-prev" aria-label="к предыдущему слайду"></button>
+
+          <div class="partners-slider__slider js-partners-slider">
+            <div class="swiper-wrapper">
+              <a href="#" class="swiper-slide partners-slider__slide"><img src="img/partners1.png" alt="логотип партнера" class="partners-slider__img"></a>
+              <a href="#" class="swiper-slide partners-slider__slide"><img src="img/partners2.png" alt="логотип партнера" class="partners-slider__img"></a>
+              <a href="#" class="swiper-slide partners-slider__slide"><img src="img/partners3.png" alt="логотип партнера" class="partners-slider__img"></a>
+              <a href="#" class="swiper-slide partners-slider__slide"><img src="img/partners4.png" alt="логотип партнера" class="partners-slider__img"></a>
+              <a href="#" class="swiper-slide partners-slider__slide"><img src="img/partners5.png" alt="логотип партнера" class="partners-slider__img"></a>
+              <a href="#" class="swiper-slide partners-slider__slide"><img src="img/partners6.png" alt="логотип партнера" class="partners-slider__img"></a>
+              <a href="#" class="swiper-slide partners-slider__slide"><img src="img/partners7.png" alt="логотип партнера" class="partners-slider__img"></a>
+              <a href="#" class="swiper-slide partners-slider__slide"><img src="img/partners8.png" alt="логотип партнера" class="partners-slider__img"></a>
+              <a href="#" class="swiper-slide partners-slider__slide"><img src="img/partners9.png" alt="логотип партнера" class="partners-slider__img"></a>
+            </div>
+          </div>
+
+          <button class="partners-slider__next partners-slider__arrow js-partners-next" aria-label="к следующему слайду"></button>
+
+
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="forms">
+      <div class="container forms__container">
+        <div class="forms__left">
+          <h4 class="forms__heading">Шоурум&nbsp;№4</h4>
+          <p class="forms__address">Леонтьевский переулок, дом&nbsp;5/1</p>
+        </div>
+
+        <form action="mail.php" id="forms__form" autocomplete="off" class="forms__form" method="POST">
+          <input type="hidden" name="admin_email[]" value="hob.bilbo@gmail.com">
+          <input type="text" class="forms__form-input form-control" placeholder="Имя*" autocomplete="off" name="name" id="name"/>
+
+          <input type="tel" class="forms__form-input form-control" placeholder="Телефон*" autocomplete="off" name="tel" id="tel"/>
+          <button type="submit" class="forms__form-btn" id="submit-btn">Заказать&nbsp;обратный&nbsp;звонок</button>
+        </form>
+
+
+        <div class="forms__right">
+          <h4 class="forms__heading">Связаться в один клик</h4>
+          <ul class="forms__right-icon">
+            <li>
+              <a href="" class="forms__right-icon forms__right-whatsapp" aria-label="связаться через вотсап">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 39.375C30.7005 39.375 39.375 30.7005 39.375 20C39.375 9.29948 30.7005 0.625 20 0.625C9.29948 0.625 0.625 9.29948 0.625 20C0.625 30.7005 9.29948 39.375 20 39.375Z" fill="#30BF39"/>
+                <path d="M25.8749 21.751C25.6249 21.626 24.3124 20.876 24.0624 20.8135C23.8124 20.6885 23.6249 20.6885 23.4374 20.9385C23.2499 21.1885 22.6874 21.8135 22.5624 21.9385C22.3749 22.126 22.2499 22.126 21.9999 22.001C21.7499 21.876 20.8749 21.5635 19.8749 20.5635C19.1249 19.8135 18.5624 18.9385 18.4374 18.626C18.3124 18.376 18.4374 18.1885 18.5624 18.0635C18.6874 17.9385 18.8124 17.751 18.9999 17.626C19.1874 17.501 19.1874 17.376 19.3124 17.1885C19.4374 17.001 19.3749 16.876 19.3124 16.6885C19.2499 16.501 18.7499 15.1885 18.5624 14.626C18.3749 14.0635 18.1249 14.1885 17.9999 14.126C17.8124 14.126 17.6874 14.0635 17.4999 14.0635C17.2499 14.0635 16.9374 14.1885 16.7499 14.376C16.4999 14.626 15.7499 15.251 15.7499 16.5635C15.7499 17.876 16.6249 19.251 16.7499 19.376C16.8749 19.5635 18.4999 22.4385 21.1874 23.626C23.8749 24.8135 23.8749 24.4385 24.3749 24.4385C24.8749 24.4385 25.9999 23.8135 26.2499 23.251C26.4999 22.626 26.4999 22.0635 26.4374 22.001C26.3124 22.001 26.1249 21.9385 25.8749 21.751ZM20.8749 28.1885C19.1249 28.1885 17.4999 27.6885 16.0624 26.751L12.6874 27.8135L13.8124 24.5635C12.7499 23.0635 12.1249 21.251 12.1249 19.376C12.1249 14.501 16.0624 10.5635 20.9374 10.5635C25.8124 10.5635 29.6874 14.501 29.6874 19.376C29.6874 24.251 25.7499 28.1885 20.8749 28.1885ZM20.8749 8.81348C15.0624 8.81348 10.3124 13.5635 10.3124 19.376C10.3124 21.3135 10.8124 23.1885 11.8124 24.8135L9.87489 30.501L15.7499 28.626C17.3124 29.501 19.0624 29.9385 20.8749 29.9385C26.6874 29.9385 31.4374 25.1885 31.4374 19.376C31.4374 13.5635 26.7499 8.81348 20.8749 8.81348Z" fill="white"/>
+                </svg>
+               </a>
+            </li>
+            <li>
+              <a href="" class="forms__right-icon forms__right-telegram" aria-label="связаться через телеграмм">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 40C31.0457 40 40 31.0457 40 20C40 8.95431 31.0457 0 20 0C8.95431 0 0 8.95431 0 20C0 31.0457 8.95431 40 20 40Z" fill="url(#paint0_linear_136320_64)"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M9.05312 19.7889L20.7167 14.7649C26.271 12.4547 27.425 12.0534 28.1773 12.0402C28.3428 12.0373 28.7127 12.0783 28.9523 12.2727C29.1547 12.4369 29.2103 12.6587 29.237 12.8143C29.2636 12.9699 29.2968 13.3246 29.2704 13.6017C28.9694 16.7641 27.667 24.4386 27.0045 27.9806C26.7241 29.4794 26.1725 29.9819 25.6377 30.0311C24.4762 30.138 23.5943 29.2635 22.4694 28.5261L18.006 25.528C16.0314 24.2268 17.3114 23.5116 18.4368 22.3428C18.7313 22.0368 23.8486 17.3823 23.9476 16.96C23.9596 16.9072 23.9715 16.7104 23.8546 16.6064C23.7376 16.5024 23.565 16.5384 23.4404 16.5663C23.2639 16.6064 20.4519 18.465 15.0044 22.1423C14.2062 22.6904 13.4832 22.9575 12.8354 22.9435C12.1213 22.9281 10.7477 22.5397 9.72652 22.2078C8.474 21.8007 7.47852 21.5854 7.56524 20.8939C7.61036 20.5338 8.10632 20.1655 9.05308 19.789L9.05312 19.7889Z" fill="white"/>
+                <defs>
+                <linearGradient id="paint0_linear_136320_64" x1="20" y1="0" x2="20" y2="39.7033" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#2AABEE"/>
+                <stop offset="1" stop-color="#229ED9"/>
+                </linearGradient>
+                </defs>
+                </svg>
+              </a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="map">
+      <h3 class="visually-hidden">Яндекс-карта местонахождения галереи</h3>
+      <div id="map" style="height: 700px"></div>
+    </section>
+
+    <div class="modals fix-block">
+      <div class="modal-overlay">
+        <div class="modal modal--1" data-target="form-popup">
+          <img src="img/gallery_2-modal.jpg" alt="изображение картины Женщина с граблями" class="modal__img" width="400" height="500">
+          <button class="modal__btn-close" id="modal_close" aria-label="кнопка закрытие информационного окна">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.66661 15.3046L15.3333 0.000397987L16 0.696045L1.33328 16.0003L0.66661 15.3046Z" fill="black"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.666664 0.000119108L15.3334 15.3044L14.6667 16L-3.42086e-06 0.695766L0.666664 0.000119108Z" fill="black"/>
+                </svg>
+            </button>
+          <div class="modal__content">
+            <h4 class="modal__content-artist">Казимир Малевич</h4>
+            <h5 class="modal__content-name">“Женщина с граблями”</h5>
+            <p class="modal__content-date">1931-1932</p>
+            <p class="modal__content-desk">Картина из второй серии крестьянского цикла работ Казимира Малевича. Художник принялся за её создание в 1930-1931 годах, после того, как первый цикл был утерян после Берлинской и Варшавской выставок в 1927 году.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  <footer class="footer" id="footer">
+    <div class="container footer__container">
+      <a class="footer__top-logo">
+        <img src="img/logo.png" alt="Логотип художественной галереи">
+      </a>
+      <div class="footer__social">
+        <ul aria-label="связь через социальные сети" class="footer__social-list">
+          <li class="footer__social-item">
+            <a aria-label="кнопка перехода в вконтакт" href="#" class="footer__social-link vk"><svg width="60" height="60" viewBox="0 0 60 60" fill="#7C7C7C" xmlns="http://www.w3.org/2000/svg">
+              <path d="M30 0C13.432 0 0 13.4314 0 30C0 46.5686 13.432 60 30 60C46.568 60 60 46.5686 60 30C60 13.4314 46.568 0 30 0ZM45.2176 33.2446C46.6159 34.6103 48.0951 35.8957 49.3504 37.4026C49.9065 38.0692 50.4307 38.7585 50.8297 39.5337C51.3993 40.6392 50.8849 41.8515 49.8954 41.9171L43.7494 41.9159C42.162 42.0473 40.8988 41.4071 39.8339 40.3218C38.9837 39.457 38.195 38.5332 37.3762 37.6389C37.0416 37.2718 36.6893 36.9262 36.2695 36.6543C35.4316 36.1093 34.7036 36.2762 34.2236 37.1515C33.7344 38.0421 33.6227 39.0292 33.5761 40.0205C33.5092 41.4697 33.0721 41.8484 31.618 41.9165C28.5109 42.062 25.5628 41.5906 22.8227 40.0241C20.4055 38.6425 18.5346 36.6924 16.9043 34.4845C13.7297 30.1805 11.2984 25.4566 9.11386 20.597C8.6222 19.5026 8.98189 18.917 10.1893 18.8943C12.1952 18.8557 14.2011 18.8606 16.2071 18.8925C17.0234 18.9054 17.5636 19.3725 17.8772 20.1428C18.9612 22.8098 20.2901 25.3473 21.9554 27.7007C22.3992 28.3274 22.8522 28.9522 23.4973 29.3948C24.2093 29.8834 24.7519 29.7219 25.0877 28.9271C25.3025 28.4219 25.3952 27.8817 25.4418 27.3404C25.6014 25.486 25.6205 23.6323 25.3442 21.7854C25.1724 20.6296 24.5224 19.8832 23.3702 19.6647C22.7834 19.5536 22.8694 19.3363 23.1548 19.0011C23.6501 18.4217 24.1142 18.0632 25.0416 18.0632L31.9857 18.062C33.0801 18.2768 33.3256 18.7679 33.4742 19.8703L33.4803 27.5871C33.4674 28.0137 33.6945 29.2782 34.4606 29.5574C35.0744 29.76 35.4795 29.2677 35.8465 28.8792C37.5118 27.112 38.6983 25.0263 39.7608 22.8675C40.2298 21.9155 40.6343 20.9303 41.0271 19.9433C41.3193 19.2135 41.7735 18.8544 42.5972 18.8667L49.2841 18.8747C49.4811 18.8747 49.6812 18.8765 49.8764 18.9103C51.0034 19.103 51.3121 19.5879 50.9635 20.6873C50.4147 22.4145 49.3485 23.8533 48.3063 25.2958C47.1892 26.8401 45.9977 28.3304 44.8917 29.8815C43.8752 31.2994 43.9556 32.0133 45.2176 33.2446Z" />
+              </svg></a>
+          </li>
+          <li class="footer__social-item">
+            <a aria-label="связь через инстаграм" href="#" class="footer__social-link inst"><svg width="60" height="60" viewBox="0 0 60 60" fill="#7C7C7C" xmlns="http://www.w3.org/2000/svg">
+              <path d="M24.2578 30C24.2578 33.1714 26.8286 35.7422 30 35.7422C33.1714 35.7422 35.7422 33.1714 35.7422 30C35.7422 26.8286 33.1714 24.2578 30 24.2578C26.8286 24.2578 24.2578 26.8286 24.2578 30Z" />
+              <path d="M16.571 19.8403C16.8471 19.0923 17.2874 18.4153 17.8596 17.8596C18.4154 17.2874 19.0919 16.847 19.8404 16.571C20.4474 16.3352 21.3593 16.0546 23.0388 15.9781C24.8557 15.8953 25.4004 15.8774 30 15.8774C34.6001 15.8774 35.1448 15.8948 36.9612 15.9777C38.6407 16.0546 39.5531 16.3352 40.1596 16.571C40.9081 16.847 41.5851 17.2874 42.1404 17.8596C42.7126 18.4153 43.1529 19.0919 43.4294 19.8403C43.6652 20.4473 43.9458 21.3596 44.0222 23.0392C44.1051 24.8556 44.1229 25.4003 44.1229 30.0004C44.1229 34.6 44.1051 35.1447 44.0222 36.9616C43.9458 38.6411 43.6652 39.553 43.4294 40.16C43.1529 40.9084 42.713 41.585 42.1408 42.1407C41.5851 42.7129 40.9085 43.1533 40.1601 43.4293C39.5531 43.6655 38.6407 43.9461 36.9612 44.0226C35.1448 44.1054 34.6005 44.1228 30.0005 44.1228C25.3999 44.1228 24.8552 44.1054 23.0392 44.0226C21.3597 43.9461 20.4474 43.6655 19.8404 43.4293C18.338 42.8498 17.1506 41.6624 16.571 40.16C16.3353 39.553 16.0547 38.6411 15.9778 36.9616C15.8949 35.1447 15.8775 34.6 15.8775 30.0004C15.8775 25.4003 15.8949 24.8556 15.9778 23.0392C16.0542 21.3596 16.3348 20.4473 16.571 19.8403ZM30 38.8457C34.8857 38.8457 38.8463 34.8856 38.8463 29.9999C38.8463 25.1142 34.8857 21.1541 30 21.1541C25.1147 21.1541 21.1542 25.1142 21.1542 29.9999C21.1542 34.8856 25.1147 38.8457 30 38.8457ZM20.8044 22.8716C21.9461 22.8716 22.8717 21.946 22.8717 20.8044C22.8717 19.6627 21.9461 18.7371 20.8044 18.7371C19.6628 18.7371 18.7372 19.6627 18.7372 20.8044C18.7376 21.946 19.6628 22.8716 20.8044 22.8716Z" />
+              <path d="M30 0C46.566 0 60 13.434 60 30C60 46.566 46.566 60 30 60C13.434 60 0 46.566 0 30C0 13.434 13.434 0 30 0ZM12.8773 37.1022C12.9607 38.936 13.2523 40.188 13.678 41.2839C14.5729 43.5979 16.4021 45.4271 18.7161 46.322C19.8116 46.7477 21.064 47.0389 22.8973 47.1227C24.7343 47.2064 25.3212 47.2266 29.9995 47.2266C34.6783 47.2266 35.2647 47.2064 37.1022 47.1227C38.9355 47.0389 40.188 46.7477 41.2834 46.322C42.4333 45.8894 43.4743 45.2115 44.3349 44.3349C45.211 43.4747 45.889 42.4333 46.3216 41.2839C46.7473 40.1884 47.0389 38.936 47.1222 37.1027C47.2069 35.2652 47.2266 34.6783 47.2266 30C47.2266 25.3217 47.2069 24.7348 47.1227 22.8978C47.0393 21.064 46.7482 19.812 46.3225 18.7161C45.8899 17.5667 45.2115 16.5253 44.3349 15.6651C43.4747 14.7885 42.4333 14.1106 41.2839 13.678C40.188 13.2523 38.936 12.9611 37.1022 12.8773C35.2652 12.7936 34.6783 12.7734 30 12.7734C25.3217 12.7734 24.7348 12.7936 22.8978 12.8778C21.064 12.9611 19.812 13.2523 18.7161 13.6775C17.5667 14.1101 16.5253 14.7885 15.6647 15.6651C14.7885 16.5257 14.1101 17.5667 13.678 18.7161C13.2518 19.812 12.9607 21.064 12.8769 22.8978C12.7931 24.7348 12.7734 25.3217 12.7734 30C12.7734 34.6783 12.7931 35.2652 12.8773 37.1022Z" />
+              </svg></a>
+          </li>
+          <li class="footer__social-item">
+            <a aria-label="связь через фейсбук" href="#" class="footer__social-link fb"><svg width="60" height="60" viewBox="0 0 60 60" fill="#7C7C7C" xmlns="http://www.w3.org/2000/svg">
+              <path d="M30 0C13.5 0 0 13.5241 0 30.1807C0 45.241 10.98 57.741 25.32 60V38.9157H17.7V30.1807H25.32V23.5241C25.32 15.9639 29.79 11.8072 36.66 11.8072C39.93 11.8072 43.3499 12.3795 43.3499 12.3795V19.8193H39.57C35.85 19.8193 34.68 22.1386 34.68 24.5181V30.1807H43.0199L41.6699 38.9157H34.68V60C41.7493 58.8791 48.1866 55.2576 52.8297 49.7893C57.4729 44.3211 60.016 37.3664 59.9999 30.1807C59.9999 13.5241 46.4999 0 30 0Z" />
+              </svg></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </footer>
+
+  <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
+  <script src="js/swiper@7.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=<ваш API-ключ>&lang=ru_RU" type="text/javascript"></script>
+  <script src="https://unpkg.com/@popperjs/core@2"></script>
+  <script src="https://unpkg.com/tippy.js@6"></script>
+  <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
+  <script src="js/choices.min.js"></script>
+  <script src="js/main.js"></script>
+
+
+</body>
+</html>
+
