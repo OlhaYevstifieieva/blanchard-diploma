@@ -443,7 +443,7 @@
                 <div class="questions">
 
                   <label class="checkbox-wrap">
-                    <input class="checkbox visually-hidden" type="checkbox" name="check-one" checked>
+                    <input class="checkbox visually-hidden" type="checkbox" name="check-one">
                     <div class="checkbox-content">
                       <span class="visual-check"></span>
                       <span class="check-text">XIX век</span>
@@ -527,7 +527,7 @@
             </article>
             <ul class="ac-list" id="accordion">
               <li class="ac-list__item">
-                <h4 class="artists__heading3">
+                <h4 class="artists__heading3"  tabindex="0">
                   <span class="artists__heading3-text">
                     <span class="artists__heading3-wrap">C 1400 по 1499 гг.</span>
                   </span>
@@ -565,7 +565,7 @@
 
               </li>
               <li class="ac-list__item">
-                <h4 class="artists__heading3">
+                <h4 class="artists__heading3" tabindex="0">
                   <span class="artists__heading3-text">
                     <span class="artists__heading3-wrap">C 1500 по 1599 гг.</span>
                   </span>
@@ -585,7 +585,7 @@
 
               </li>
               <li class="ac-list__item">
-                <h4 class="artists__heading3">
+                <h4 class="artists__heading3" tabindex="0">
                   <span class="artists__heading3-text">
                     <span class="artists__heading3-wrap">C 1600 по 1699 гг.</span>
                   </span>
@@ -607,7 +607,7 @@
 
               </li>
               <li class="ac-list__item">
-                <h4 class="artists__heading3">
+                <h4 class="artists__heading3" tabindex="0">
                   <span class="artists__heading3-text">
                     <span class="artists__heading3-wrap">C 1700 по 1799 гг.</span>
                   </span>
@@ -629,7 +629,7 @@
 
               </li>
               <li class="ac-list__item">
-                <h4 class="artists__heading3">
+                <h4 class="artists__heading3" tabindex="0">
                   <span class="artists__heading3-text">
                     <span class="artists__heading3-wrap">C 1800 по 1899 гг.</span>
                   </span>
@@ -651,7 +651,7 @@
 
               </li>
               <li class="ac-list__item">
-                <h4 class="artists__heading3">
+                <h4 class="artists__heading3" tabindex="0">
                   <span class="artists__heading3-text">
                     <span class="artists__heading3-wrap">C 1900 по 1999 гг.</span>
                   </span>
@@ -673,7 +673,7 @@
 
               </li>
               <li class="ac-list__item">
-                <h4 class="artists__heading3">
+                <h4 class="artists__heading3" tabindex="0">
                   <span class="artists__heading3-text">
                     <span class="artists__heading3-wrap">C 2000 г.</span>
                   </span>
@@ -711,7 +711,8 @@
             <button class="events__swiper-btn events__swiper-prev js-events-prev" aria-label="К предыдущему слайду"></button>
             <div class="events-slider js-events-slider">
               <div class="swiper-wrapper">
-                <div class="events__slide events__slide-back1 swiper-slide">
+                <div class="events__slide swiper-slide">
+                  <div class="events__slide-back events__slide-back1"></div>
                   <div class="events__slide-content">
                     <p class="events__slide-caption">Музей им. Щусева<br>с 20 марта по 30 апреля</p>
                     <p class="events__slide-content-heading">Книжная гравюра в живом восприятии</p>
@@ -719,15 +720,17 @@
                     <a href="#" class="events__slide-content-link">Подробнее</a>
                   </div>
                 </div>
-                <div class="events__slide events__slide-back2 swiper-slide">
+                <div class="events__slide swiper-slide">
+                  <div class="events__slide-back events__slide-back2"></div>
                   <div class="events__slide-content">
-                    <p class="events__slide-caption">Музей им. Щусева<br>с 20 марта по 30 апреля</p>
-                    <p class="events__slide-content-heading">Книжная гравюра в живом восприятии</p>
-                    <p class="events__slide-content-text">Один из ведущих флорентийских художников Кватроченто, основатель художественной династии, которую продолжили его брат Давид и сын Ридольфо.</p>
+                    <p class="events__slide-caption">ММОМА <br>24 марта 19:00</p>
+                    <p class="events__slide-content-heading">«Открытая дискуссия». Дмитрий Петров и Сергей Ильин.</p>
+                    <p class="events__slide-content-text">Высокий уровень вовлечения представителей целевой аудитории является четким доказательством простого факта.</p>
                     <a href="#" class="events__slide-content-link">Подробнее</a>
                   </div>
                 </div>
-                <div class="events__slide events__slide-back3 swiper-slide">
+                <div class="events__slide swiper-slide">
+                  <div class="events__slide-back events__slide-back3"></div>
                   <div class="events__slide-content">
                     <p class="events__slide-caption">Еврейский музей<br>с 31 марта по 21 апреля</p>
                     <p class="events__slide-content-heading">Выставка «Формация 2020»</p>
@@ -735,19 +738,21 @@
                     <a href="#" class="events__slide-content-link">Подробнее</a>
                   </div>
                 </div>
-                <div class="events__slide events__slide-back4 swiper-slide">
-                  <div class="events__slide-content">
-                    <p class="events__slide-caption">Третьяковка на Крымском валу<br>с 30 марта по 30 апреля</p>
-                    <p class="events__slide-content-heading">XXIV Международная биеннале молодого искусства</p>
-                    <p class="events__slide-content-text">Внезапно, реплицированные с зарубежных источников, современные исследования.</p>
-                    <a href="#" class="events__slide-content-link">Подробнее</a>
-                  </div>
-                </div>
-                <div class="events__slide events__slide-back5 swiper-slide">
+                <div class="events__slide swiper-slide">
+                  <div class="events__slide-back events__slide-back5"></div>
                   <div class="events__slide-content">
                     <p class="events__slide-caption">ММАМ<br>с 8 апреля по 20 мая </p>
                     <p class="events__slide-content-heading">Джон Винзор. Фотографии из серии «Метафора серебра»</p>
                     <p class="events__slide-content-text">Один из ведущих флорентийских художников Кватроченто, основатель художественной династии, которую продолжили его брат Давид и сын Ридольфо.</p>
+                    <a href="#" class="events__slide-content-link">Подробнее</a>
+                  </div>
+                </div>
+                <div class="events__slide swiper-slide">
+                  <div class="events__slide-back events__slide-back4"></div>
+                  <div class="events__slide-content">
+                    <p class="events__slide-caption">Третьяковка на Крымском валу<br>с 30 марта по 30 апреля</p>
+                    <p class="events__slide-content-heading">XXIV Международная биеннале молодого искусства</p>
+                    <p class="events__slide-content-text">Внезапно, реплицированные с зарубежных источников, современные исследования.</p>
                     <a href="#" class="events__slide-content-link">Подробнее</a>
                   </div>
                 </div>
@@ -808,12 +813,27 @@
 
         <form action="mail.php" id="forms__form" autocomplete="off" class="forms__form" method="POST">
           <input type="hidden" name="admin_email[]" value="hob.bilbo@gmail.com">
-          <input type="text" class="forms__form-input form-control" placeholder="Имя*" autocomplete="off" name="name" id="name"/>
+          <label class="forms__form-label">
+            <input type="text"
+            class="forms__form-input input-name"
+            placeholder="Имя*"
+            autocomplete="off"
+            name="name"
+            data-validate-field="name">
+          </label>
 
-          <input type="tel" class="forms__form-input form-control" placeholder="Телефон*" autocomplete="off" name="tel" id="tel"/>
+          <label class="forms__form-label">
+            <input type="tel"
+            class="forms__form-input input-tel"
+            placeholder="Телефон*"
+            autocomplete="off"
+            name="tel"
+            data-validate-field="tel"
+            data-validate-rules="phone">
+          </label>
+
           <button type="submit" class="forms__form-btn" id="submit-btn">Заказать&nbsp;обратный&nbsp;звонок</button>
         </form>
-
 
         <div class="forms__right">
           <h4 class="forms__heading">Связаться в один клик</h4>
@@ -909,9 +929,10 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>
   <script src="https://api-maps.yandex.ru/2.1/?apikey=<ваш API-ключ>&lang=ru_RU" type="text/javascript"></script>
-  <script src="https://unpkg.com/@popperjs/core@2"></script>
-  <script src="https://unpkg.com/tippy.js@6"></script>
-  <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/tippy-bundle.umd.js"></script>
+  <script src="js/inputmask.min.js"></script>
+  <script src="js/just-validate.min.js"></script>
   <script src="js/choices.min.js"></script>
   <script src="js/main.js"></script>
 

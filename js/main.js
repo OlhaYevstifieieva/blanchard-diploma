@@ -320,15 +320,6 @@ const defaultSelect = () => {
 defaultSelect();
 
 
-// S E L E C T
-
-const element = document.querySelector('select');
-const choices = new Choices(element, {
-  searchEnabled: false,
-  shouldSort: false
-});
-
-
 // // A C C O R D I O N   ARTISTS
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -391,55 +382,13 @@ $( function() {
  });
 
 
-// M A P
-
-ymaps.ready(init);
-    function init() {
-      const mapElem = document.querySelector('#map');
-      const myMap = new ymaps.Map(
-        "map",
-        {
-          center: [55.75846806898367, 37.60108849999989],
-          zoom: 14,
-          controls: ['geolocationControl', 'zoomControl']
-        },
-        {
-          suppressMapOpenBlock: true,
-          geolocationControlSize: "large",
-          geolocationControlPosition:  { top: "200px", right: "20px" },
-          geolocationControlFloat: 'none',
-          zoomControlSize: "small",
-          zoomControlFloat: "none",
-          zoomControlPosition: { top: "120px", right: "20px" }
-        }
-      );
-
-      myMap.behaviors.disable('scrollZoom');
-
-      const myPlacemark = new ymaps.Placemark(
-        [55.75846806898367, 37.60108849999989],
-        {},
-        {
-          iconLayout: "default#image",
-          iconImageHref: "../img/geo.svg",
-          iconImageSize: [20, 20],
-          iconImageOffset: [-20, -40],
-        }
-      );
-
-      myMap.geoObjects.add(myPlacemark);
-
-      setTimeout(() => {
-        myMap.container.fitToViewport();
-      }, 5000);
-    }
-
-
 // T O O L T I P PROJECTS
 
 tippy('.js-tooltip', {
+  // content: 'purple',
   theme: 'purple',
-})
+});
+
 //остальное в css
 
 
@@ -503,7 +452,7 @@ tippy('.js-tooltip', {
         slidesPerView: 2,
         spaceBetween: 50
       },
-      1260: {
+      1290: {
         slidesPerView: 3,
         spaceBetween: 50
       }
@@ -512,31 +461,96 @@ tippy('.js-tooltip', {
 })();
 
 
-// V A L I D A T E
+// // V A L I D A T E  &  M A S K
 
-const validation = new JustValidate('#forms__form');
+var phoneElement = document.querySelector(".input-tel");
 
-validation
-  .addField('#name', [
+    var im = new Inputmask("+7(999) 999-99-99");
+    im.mask(phoneElement);
+
+    const validation = new window.JustValidate('.forms__form', {
+    errorFieldCssClass: 'is-invalid',
+    errorFieldStyle: {
+      border: '1px solid #FF5C00',
+    },
+    errorLabelCssClass: 'is-label-invalid',
+    errorLabelStyle: {
+      color: '#D11616',
+    },
+    focusInvalidField: true,
+    lockForm: true,
+  });
+
+  validation
+  .addField('.input-name', [
     {
       rule: 'minLength',
       value: 3,
-      errorMessage: 'Имя должно содержать минимум 3 буквы',
+      errorMessage: 'Имя должно содержать хотя бы 3 буквы'
     },
     {
       rule: 'maxLength',
       value: 30,
-      errorMessage: 'Имя должно не содержать более 30 букв',
+      errorMessage: 'Имя не может содержать более 30 символов'
     },
-  ])
-  .addField('#tel', [
     {
       rule: 'required',
-      errorMessage: 'Телефон должен быть указан!',
+      errorMessage: 'Как вас зовут?'
+    }
+  ])
+
+  .addField('.input-tel', [
+    {
+      validator: () => {
+        const phone = phoneElement.inputmask.unmaskedvalue();
+        const result = Number(phone) && phone.length === 10;
+        return result === 0 ? false : result;
+      },
+      errorMessage: 'Укажите ваш телефон',
+    }
+  ]);
+
+
+  // M A P
+
+ymaps.ready(init);
+function init() {
+  const mapElem = document.querySelector('#map');
+  const myMap = new ymaps.Map(
+    "map",
+    {
+      center: [55.75846806898367, 37.60108849999989],
+      zoom: 14,
+      controls: []
     },
     {
-      rule: 'tel',
-      errorMessage: 'Телефон имеет недопустимый формат!',
-    },
-  ]);
+      suppressMapOpenBlock: true,
+      geolocationControlSize: "large",
+      geolocationControlPosition:  { top: "200px", right: "20px" },
+      geolocationControlFloat: 'none',
+      zoomControlSize: "small",
+      zoomControlFloat: "none",
+      zoomControlPosition: { top: "120px", right: "20px" }
+    }
+  );
+
+  myMap.behaviors.disable('scrollZoom');
+
+  const myPlacemark = new ymaps.Placemark(
+    [55.75846806898367, 37.60108849999989],
+    {},
+    {
+      iconLayout: "default#image",
+      iconImageHref: "../img/geo.svg",
+      iconImageSize: [20, 20],
+      iconImageOffset: [-20, -40],
+    }
+  );
+
+  myMap.geoObjects.add(myPlacemark);
+
+  setTimeout(() => {
+    myMap.container.fitToViewport();
+  }, 5000);
+}
 
