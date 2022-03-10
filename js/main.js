@@ -1,77 +1,4 @@
 
-// здесь мы определяем функцию, которая отвеает за работу меню, в ней не нужно ничего менять
-function setBurger(params) {
-  const btn = document.querySelector(`.${params.btnClass}`);
-  const menu = document.querySelector(`.${params.menuClass}`);
-
-  menu.addEventListener("animationend", function () {
-    if (this.classList.contains(params.hiddenClass)) {
-      this.classList.remove(params.activeClass);
-      this.classList.remove(params.hiddenClass);
-    }
-  });
-
-  btn.addEventListener("click", function () {
-    this.classList.toggle(params.activeClass);
-
-    if (
-      !menu.classList.contains(params.activeClass) &&
-      !menu.classList.contains(params.hiddenClass)
-    ) {
-      menu.classList.add(params.activeClass);
-      document.body.style.overflow = 'hidden';
-    } else {
-      menu.classList.add(params.hiddenClass);
-      document.body.removeAttribute('style');
-    }
-  });
-}
-
-// здесь мы вызываем функцию и передаем в нее классы наших элементов
-setBurger({
-  btnClass: "burger", // класс бургера
-  menuClass: "header__nav-wrap", // класс меню
-  activeClass: "is-opened", // класс открытого состояния
-  hiddenClass: "is-closed" // класс закрывающегося состояния (удаляется сразу после закрытия)
-});
-
-function setSearch(params) {
-  const openBtn = document.querySelector(`.${params.openBtnClass}`);
-  const search = document.querySelector(`.${params.searchClass}`);
-  const closeBtn = search.querySelector(`.${params.closeBtnClass}`);
-
-  search.addEventListener("animationend", function () {
-    if (this.classList.contains(params.hiddenClass)) {
-      this.classList.remove(params.activeClass);
-      this.classList.remove(params.hiddenClass);
-    }
-  });
-
-  openBtn.addEventListener("click", function (evt) {
-    this.disabled = true;
-
-    if (
-      !search.classList.contains(params.activeClass) &&
-      !search.classList.contains(params.hiddenClass)
-    ) {
-      search.classList.add(params.activeClass);
-    }
-  });
-
-  closeBtn.addEventListener('click', function () {
-    openBtn.disabled = false;
-    search.classList.add(params.hiddenClass);
-  });
-}
-
-setSearch({
-  openBtnClass: "js-open-search", // класс кнопки открытия
-  closeBtnClass: "js-close", // класс кнопки закрытия
-  searchClass: "js-form", // класс формы поиска
-  activeClass: "is-opened", // класс открытого состояния
-  hiddenClass: "is-closed" // класс закрывающегося состояния (удаляется сразу после закрытия)
-});
-
 
 // B O T T O M   MENU   D R O P D O W N
 
@@ -121,7 +48,7 @@ function setMenuListener() {
 setMenuListener();
 
 
-// //S W I P E R HERO
+//S W I P E R HERO
 
 (() => {
   const swiper = new Swiper('.js-back-slider', {
@@ -320,7 +247,7 @@ const defaultSelect = () => {
 defaultSelect();
 
 
-// // A C C O R D I O N   ARTISTS
+// A C C O R D I O N   ARTISTS
 
 document.addEventListener('DOMContentLoaded', function () {
   $( ".js-accordion" ).accordion({
@@ -461,7 +388,7 @@ tippy('.js-tooltip', {
 })();
 
 
-// // V A L I D A T E  &  M A S K
+// V A L I D A T E  &  M A S K
 
 var phoneElement = document.querySelector(".input-tel");
 
@@ -553,4 +480,143 @@ function init() {
     myMap.container.fitToViewport();
   }, 5000);
 }
+
+// здесь мы определяем функцию, которая отвечает за работу меню, в ней не нужно ничего менять
+(() => {
+  function setBurger(params) {
+    const btn = document.querySelector(`.${params.btnClass}`);
+    const menu = document.querySelector(`.${params.menuClass}`);
+    const links = document.querySelectorAll(`.${params.linkClass}`);
+
+    function onBtnClick () {
+      if (window.getWindowWidth() <= window.TABLET_WIDTH) {
+      btn.classList.toggle(params.activeClass);
+
+        if (
+          !menu.classList.contains(params.activeClass) &&
+          !menu.classList.contains(params.hiddenClass)
+        ) {
+          menu.classList.add(params.activeClass);
+          document.body.style.overflow = 'hidden';
+          btn.setAttribute('aria-label', 'закрыть главное меню');
+        } else {
+          menu.classList.add(params.hiddenClass);
+          document.body.removeAttribute('style');
+          btn.classList.toggle(params.hiddenClass);
+          btn.setAttribute('aria-label', 'открыть главное меню');
+        }
+      }
+    }
+    menu.addEventListener("animationend", function () {
+      if (this.classList.contains(params.hiddenClass)) {
+        this.classList.remove(params.activeClass);
+        this.classList.remove(params.hiddenClass);
+        btn.classList.remove(params.hiddenClass);
+      }
+    });
+
+    btn.addEventListener("click", window.debounce(onBtnClick, 500));
+      this.classList.toggle(params.activeClass);
+
+    links.forEach((link) => {
+      link.addEventListener("click", window.debounce(onBtnClick, 500));
+    });
+  }
+})();
+
+
+// здесь мы вызываем функцию и передаем в нее классы наших элементов
+setBurger({
+  btnClass: "burger", // класс бургера
+  menuClass: "header__nav-wrap", // класс меню
+  activeClass: "is-opened", // класс открытого состояния
+  hiddenClass: "is-closed", // класс закрывающегося состояния (удаляется сразу после закрытия)
+  linksClass: "js-menu-link"
+});
+
+function setSearch(params) {
+  const openBtn = document.querySelector(`.${params.openBtnClass}`);
+  const search = document.querySelector(`.${params.searchClass}`);
+  const closeBtn = search.querySelector(`.${params.closeBtnClass}`);
+
+  search.addEventListener("animationend", function () {
+    if (this.classList.contains(params.hiddenClass)) {
+      this.classList.remove(params.activeClass);
+      this.classList.remove(params.hiddenClass);
+    }
+  });
+
+  openBtn.addEventListener("click", function (evt) {
+    this.disabled = true;
+
+    if (
+      !search.classList.contains(params.activeClass) &&
+      !search.classList.contains(params.hiddenClass)
+    ) {
+      search.classList.add(params.activeClass);
+    }
+  });
+
+  closeBtn.addEventListener('click', function () {
+    openBtn.disabled = false;
+    search.classList.add(params.hiddenClass);
+  });
+}
+
+setSearch({
+  openBtnClass: "js-open-search", // класс кнопки открытия
+  closeBtnClass: "js-close", // класс кнопки закрытия
+  searchClass: "js-form", // класс формы поиска
+  activeClass: "is-opened", // класс открытого состояния
+  hiddenClass: "is-closed" // класс закрывающегося состояния (удаляется сразу после закрытия)
+});
+
+// SCROLL BURGER
+
+(() => {
+  const TABLET_WIDTH = 1280;
+  const MOBILE_WIDTH = 580;
+
+  function scrollToContent (link, isMobile) {
+    if (isMobile && getWindowWidth() > window.MOBILE_WIDTH) {
+		return;
+	}
+
+    const href = link.getAttribute('href').substring(1);
+    if (Boolean(href)) {
+      const scrollTarget = document.getElementById(href);
+      const elementPosition = scrollTarget.getBoundingClientRect().top;
+      window.scrollBy({
+          top: elementPosition,
+          behavior: 'smooth'
+      });
+    }
+  }
+
+  document.querySelectorAll('.js-scroll-link').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        scrollToContent(this, false);
+    });
+  });
+
+
+  function getWindowWidth () {
+    return Math.max(
+      document.body.scrollWidth,
+      document.documentElement.scrollWidth,
+      document.body.offsetWidth,
+      document.documentElement.offsetWidth,
+      document.body.clientWidth,
+      document.documentElement.clientWidth
+    );
+  }
+
+  window. MOBILE_WIDTH = MOBILE_WIDTH;
+  window.TABLET_WIDTH = TABLET_WIDTH;
+  window.debounce = debounce;
+  window.getWindowWidth = getWindowWidth;
+})();
+
 

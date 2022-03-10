@@ -1,3 +1,5 @@
+
+
 .choices {
   position: relative;
   overflow: hidden;
@@ -66,7 +68,7 @@
   display: inline-block;
   vertical-align: top;
   width: 100%;
-  padding: 12px 15px;
+  padding: 8px 15px;
   border: 1px solid var(--fs-color);
   border-radius: 6px;
   overflow: hidden;
