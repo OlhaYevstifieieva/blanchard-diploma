@@ -64,7 +64,7 @@
 
 .choices__inner {
   position: relative;
-  z-index: 2;
+  z-index: 1;
   display: inline-block;
   vertical-align: top;
   width: 100%;
