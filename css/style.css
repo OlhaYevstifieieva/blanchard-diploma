@@ -600,7 +600,7 @@ display: flex;
 
 .header__bottom-dropdown-wrap {
   width: 220px;
-  height: 220px;
+  max-height: 220px;
 }
 
 
@@ -2261,6 +2261,10 @@ line-height: 32px;
   background-color: var(--fs-color);
 }
 
+.map__wrap {
+  height: 700px;
+}
+
 [class*="ground-pane"] {
   filter: grayscale(1);
 }
@@ -2994,7 +2998,7 @@ line-height: 32px;
 
     .forms__form-btn {
       width: 317px;
-  } 
+  }
 
 }
 
@@ -3375,6 +3379,7 @@ line-height: 32px;
   }
 
   .forms__form-label {
+    width: 100%;
     margin-bottom: 21px;
     height: 39px;
   }
